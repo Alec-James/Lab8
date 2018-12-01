@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
    <children>
       <Label layoutX="138.0" layoutY="52.0" text="Tell Me A Story">
@@ -13,17 +12,20 @@
             <Font name="Arial Black" size="63.0" />
          </font>
       </Label>
-      <Button layoutX="304.0" layoutY="562.0" mnemonicParsing="false" text="Button">
+      <Button layoutX="322.0" layoutY="565.0" mnemonicParsing="false" onAction="#handle" text="Start">
          <font>
             <Font size="45.0" />
          </font>
       </Button>
-      <RadioButton layoutX="230.0" layoutY="335.0" mnemonicParsing="false" text="Sharks">
+      <RadioButton fx:id="storyOne" layoutX="230.0" layoutY="335.0" mnemonicParsing="false" selected="true" text="Story1">
          <font>
             <Font size="32.0" />
          </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="storyGroup" />
+         </toggleGroup>
       </RadioButton>
-      <RadioButton layoutX="429.0" layoutY="335.0" mnemonicParsing="false" text="Dinos">
+      <RadioButton fx:id="storyTwo" layoutX="429.0" layoutY="335.0" mnemonicParsing="false" text="Story2" toggleGroup="$storyGroup">
          <font>
             <Font size="32.0" />
          </font>

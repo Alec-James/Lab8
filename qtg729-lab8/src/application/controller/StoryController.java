@@ -40,12 +40,16 @@ public class StoryController implements Initializable{
 	
 	@FXML 
 	Button endButton;
+	
+	private int time = 2 * (Main.story.getNumberOfPages());
 
 	public void initialize(URL location, ResourceBundle resources) {
 
 		title.setText(Main.story.getName());
 		maxPage.setText(String.valueOf(Main.story.getNumberOfPages()));
 		endButton.setVisible(false);
+		runThreadedTask();
+		endButton.setVisible(true);
 	}
 
 	public void handle(ActionEvent event) {
@@ -76,12 +80,12 @@ public class StoryController implements Initializable{
 			Thread th = new Thread(new Task() { // put the task in its own
 												// thread
 				@Override
-				protected String call() throws Exception {
+				protected Integer call() throws Exception {
 
-					String status = "";
-					for (int i = 1; i <= 10; i++) {
-						status = "Processing " + i + " of " + 10;
-						final String fstat = status;
+					int status = 0;
+					for (int i = 1; i <= time; i++) {
+						status = i;
+						final int fstat = status;
 
 						// update the label on the JavaFx Application Thread!
 						Platform.runLater(new Runnable() {
@@ -105,7 +109,17 @@ public class StoryController implements Initializable{
 		}
 	}
 	
-	public void setStatus(String text) {
+	public void setStatus(int i) {
+		
+		this.currentPage.setText(String.valueOf(i));
+		
+		int currentTime = this.time - i;
+		
+		this.seconds.setText(String.valueOf(currentTime));
+		
+		
+		
+		
 		
 	}
 

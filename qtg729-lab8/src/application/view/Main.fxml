@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <Label layoutX="138.0" layoutY="52.0" text="Tell Me A Story">
+         <font>
+            <Font name="Arial Black" size="63.0" />
+         </font>
+      </Label>
+      <Button layoutX="304.0" layoutY="562.0" mnemonicParsing="false" text="Button">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Button>
+      <RadioButton layoutX="230.0" layoutY="335.0" mnemonicParsing="false" text="Sharks">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="429.0" layoutY="335.0" mnemonicParsing="false" text="Dinos">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="166.0" layoutY="242.0" text="Select what type of story you'd like to see:">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

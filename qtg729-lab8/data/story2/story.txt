@@ -1,0 +1,9 @@
+1: Once upon a time, there was an island called Isla Nublar.
+2: It was the perfect spot to open a new amusement park, called Jurassic Park.
+3: Its owner spared no expense. (Really!)
+4: You could ride Jeeps, pet the dinosaurs..
+5: Look how excited these guys are to find dino eggs!
+6: But then the T-Rex got loose and crashed everyone's party.
+7: Bummer.
+8: But good news! The park uses a Unix system, and you know this!
+9: The day is saved! But somehow, life finds a way.... The end?

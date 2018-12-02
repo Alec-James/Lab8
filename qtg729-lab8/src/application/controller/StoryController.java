@@ -18,7 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class StoryController implements Initializable{
+public class StoryController implements Initializable {
 
 	@FXML
 	Label title;
@@ -37,19 +37,21 @@ public class StoryController implements Initializable{
 
 	@FXML
 	Label maxPage;
-	
-	@FXML 
+
+	@FXML
 	Button endButton;
-	
+
 	private int time = 2 * (Main.story.getNumberOfPages());
 
 	public void initialize(URL location, ResourceBundle resources) {
 
 		title.setText(Main.story.getName());
 		maxPage.setText(String.valueOf(Main.story.getNumberOfPages()));
+		storyDescription.setText(Main.story.getDescriptions().get(0));
+		storyImage.setImage(Main.story.getImages().get(0));
 		endButton.setVisible(false);
 		runThreadedTask();
-		endButton.setVisible(true);
+		//endButton.setVisible(true);
 	}
 
 	public void handle(ActionEvent event) {
@@ -68,13 +70,13 @@ public class StoryController implements Initializable{
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Runs a time-consuming task (wastes time) to demonstrate how threads help
 	 * prevent the GUI from hanging waiting on this long task.
 	 */
 	public void runThreadedTask() {
-		System.out.println("Running long task...with a thread!");
+		//System.out.println("Running long task...with a thread!");
 		try {
 
 			Thread th = new Thread(new Task() { // put the task in its own
@@ -83,7 +85,7 @@ public class StoryController implements Initializable{
 				protected Integer call() throws Exception {
 
 					int status = 0;
-					for (int i = 1; i <= time; i++) {
+					for (int i = 0; i <= time; i++) {
 						status = i;
 						final int fstat = status;
 
@@ -96,6 +98,7 @@ public class StoryController implements Initializable{
 						});
 						Thread.sleep(1000);
 					}
+					endButton.setVisible(true);
 					return status;
 				}
 			});
@@ -108,19 +111,19 @@ public class StoryController implements Initializable{
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void setStatus(int i) {
-		
-		this.currentPage.setText(String.valueOf(i));
-		
+
 		int currentTime = this.time - i;
-		
 		this.seconds.setText(String.valueOf(currentTime));
-		
-		
-		
-		
-		
+
+		if ((i % 2 == 0) && (currentTime != 0)) {
+			this.currentPage.setText(String.valueOf((i/2)+1));
+
+			storyImage.setImage(Main.story.getImages().get((i/2)));
+			storyDescription.setText(Main.story.getDescriptions().get(i/2));
+		}
+
 	}
 
 }

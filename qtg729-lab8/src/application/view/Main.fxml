@@ -17,7 +17,7 @@
             <Font size="45.0" />
          </font>
       </Button>
-      <RadioButton fx:id="storyOne" layoutX="230.0" layoutY="335.0" mnemonicParsing="false" selected="true" text="Story1">
+      <RadioButton fx:id="storyOne" layoutX="230.0" layoutY="335.0" mnemonicParsing="false" selected="true" text="Sharks">
          <font>
             <Font size="32.0" />
          </font>
@@ -25,7 +25,7 @@
             <ToggleGroup fx:id="storyGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="storyTwo" layoutX="429.0" layoutY="335.0" mnemonicParsing="false" text="Story2" toggleGroup="$storyGroup">
+      <RadioButton fx:id="storyTwo" layoutX="429.0" layoutY="335.0" mnemonicParsing="false" text="Dinos" toggleGroup="$storyGroup">
          <font>
             <Font size="32.0" />
          </font>

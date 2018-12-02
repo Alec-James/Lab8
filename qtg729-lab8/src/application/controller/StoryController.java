@@ -66,11 +66,20 @@ public class StoryController implements Initializable {
 		runThreadedTask();
 		//endButton.setVisible(true);
 	}
-
+	
+	/**
+	 * handle to be used on button press
+	 * 
+	 * @param event - mouse click
+	 */
 	public void handle(ActionEvent event) {
 		loadMenu();
 	}
 
+	/**
+	 * 
+	 * loads the menu view of the program
+	 */
 	public void loadMenu() {
 
 		// load the library view

@@ -36,6 +36,11 @@ public class MainController {
 		
 	}
 	
+	/**
+	 * handle to be used on button press
+	 * 
+	 * @param event - mousee clisck
+	 */
 	public void handle(ActionEvent event) {
 		
 		if(storyOne.isSelected()) {

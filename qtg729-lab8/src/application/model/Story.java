@@ -35,35 +35,43 @@ public class Story {
 		descriptions = new ArrayList<String>();
 		name = "";
 		numberOfPages = 0;
-		
 
 	}
-	
-	
 
+	/**
+	 * getter for the name of the object
+	 * 
+	 * @return - String that's the name
+	 */
 	public String getName() {
 		return name;
 	}
 
-
-
+	/**
+	 * setter for name of object
+	 * @param name - String that is the used to set the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
-
+	/**
+	 * getter for number of pages that the story will have
+	 * 
+	 * @return - int number of pages
+	 */
 	public int getNumberOfPages() {
 		return numberOfPages;
 	}
 
-
-
+	/**
+	 * setter for number of pages for the story
+	 * 
+	 * @param numberOfPages - int number of pages
+	 */
 	public void setNumberOfPages(int numberOfPages) {
 		this.numberOfPages = numberOfPages;
 	}
-
-
 
 	/**
 	 * getter for the array list
@@ -101,22 +109,42 @@ public class Story {
 		this.descriptions = descriptions;
 	}
 
+	/**
+	 * adder to add images to image array list
+	 * 
+	 * @param image - Image that is added to the array list
+	 */
 	public void addImage(Image image) {
 		this.images.add(image);
 	}
-	
+
+	/**
+	 * removes all images from the array list
+	 * 
+	 */
 	public void removeAllImages() {
 		this.images.removeAll(images);
 	}
-	
+
+	/**
+	 * removes all strings from description array list
+	 */
 	public void removeAllDesc() {
 		this.descriptions.removeAll(descriptions);
 	}
 
+	/**
+	 * adder to add description strings to the array list
+	 * 
+	 * @param desc
+	 */
 	public void addDesc(String desc) {
 		this.descriptions.add(desc);
 	}
 
+	/**
+	 * loads the information for story 1
+	 */
 	public void loadStory1() {
 		removeAllImages();
 		removeAllDesc();
@@ -126,6 +154,9 @@ public class Story {
 		this.numberOfPages = this.images.size();
 	}
 
+	/**
+	 * loads the information for story2
+	 */
 	public void loadStory2() {
 		removeAllImages();
 		removeAllDesc();
@@ -135,10 +166,15 @@ public class Story {
 		this.numberOfPages = this.images.size();
 	}
 
+	/**
+	 * load images from specified directory
+	 * 
+	 * @param path - String the directory or folder where images are located
+	 */
 	public void loadImages(String path) {
 
 		File imageFolder = new File(path);
-		//System.out.println(imageFolder);
+		// System.out.println(imageFolder);
 
 		for (File file : imageFolder.listFiles()) {
 			String imagePath = file.getPath();
@@ -150,11 +186,16 @@ public class Story {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				//System.out.println(imagePath);
+				// System.out.println(imagePath);
 			}
 		}
 	}
 
+	/**
+	 * loads the descriptions from a specified text file.
+	 * 
+	 * @param filePath - String the path of the specific text file
+	 */
 	public void loadText(String filePath) {
 		File file = new File(filePath);
 		Scanner scan;

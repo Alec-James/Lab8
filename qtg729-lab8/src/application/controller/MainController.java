@@ -1,3 +1,12 @@
+/**
+ * Main Controller Class
+ * used to control the main menu view of the program
+ * 
+ * for CS 3443
+ * Fall 2018
+ * 
+ * @author Alec Estrada (qtg729)
+ */
 package application.controller;
 
 import java.io.IOException;
@@ -42,6 +51,11 @@ public class MainController {
 		loadStory();
 	}
 	
+	
+	/**
+	 * 
+	 * loads the story view of the program
+	 */
 	public void loadStory() {
 
 		// load the library view

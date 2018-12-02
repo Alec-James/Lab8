@@ -1,3 +1,12 @@
+/**
+ * StoryController class
+ * used to control the story view of the program
+ * 
+ * for CS 3443
+ * Fall 2018
+ * 
+ * @author Alec Estrada (qtg729)
+ */
 package application.controller;
 
 import java.io.IOException;
@@ -42,6 +51,10 @@ public class StoryController implements Initializable {
 	Button endButton;
 
 	private int time = 2 * (Main.story.getNumberOfPages());
+	
+	/**
+	 * intitalizes the story view with the variables from the story
+	 */
 
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -72,8 +85,8 @@ public class StoryController implements Initializable {
 	}
 
 	/**
-	 * Runs a time-consuming task (wastes time) to demonstrate how threads help
-	 * prevent the GUI from hanging waiting on this long task.
+	 * Runs a threaded task to use for the program to run through the story
+	 * 
 	 */
 	public void runThreadedTask() {
 		//System.out.println("Running long task...with a thread!");
@@ -112,6 +125,11 @@ public class StoryController implements Initializable {
 		}
 	}
 
+	
+	/**
+	 * used to keep the view updated when running through the program
+	 * @param i
+	 */
 	public void setStatus(int i) {
 
 		int currentTime = this.time - i;
